@@ -36,18 +36,19 @@ public class SinglyLinkedList {
         return count;
     }
 
+    public void insertFirst(int value) {
+        ListNode newNode = new ListNode(value);
+        newNode.next = head;
+        head = newNode;
+    }
+
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
-        sll.head = new ListNode(10);
-        ListNode second = new ListNode(1);
-        ListNode third = new ListNode(8);
-        ListNode fourth = new ListNode(11);
 
-        // now we will connect together to form chain
 
-        sll.head.next = second;
-        second.next = third;
-        third.next = fourth;
+        sll.insertFirst(10);
+        sll.insertFirst(9);
+        sll.insertFirst(8);
 
         sll.display();
         System.out.println();

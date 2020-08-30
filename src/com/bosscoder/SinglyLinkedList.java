@@ -42,13 +42,26 @@ public class SinglyLinkedList {
         head = newNode;
     }
 
+    public void insertEnd(int value) {
+        ListNode newNode = new ListNode(value);
+        if (head == null){
+            head = newNode;
+            return;
+        }
+        ListNode current = head;
+        while (current.next != null) {
+            current = current.next;
+        }
+        current.next = newNode;
+    }
+
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
 
 
-        sll.insertFirst(10);
-        sll.insertFirst(9);
-        sll.insertFirst(8);
+        sll.insertEnd(10);
+        sll.insertEnd(9);
+        sll.insertEnd(8);
 
         sll.display();
         System.out.println();
